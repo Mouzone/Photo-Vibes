@@ -1,16 +1,9 @@
-import cv2
-import matplotlib.pyplot as plt
+from PIL import Image
+filename = "wakin_chau.jpeg"
 
-image = cv2.imread('wakin_chau.jpeg')
+with Image.open(filename) as img:
+    img.load()
 
-image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+print(f"Type: {type(img)}")
 
-histogram = cv2.calcHist([image_rgb], [0, 1, 2], None, [256, 256, 256], [0, 256, 0, 256, 0, 256])
-
-plt.figure()
-plt.title("RGB Histogram")
-plt.xlabel("Bins")
-plt.ylabel("# of Pixels")
-plt.plot(histogram)
-plt.xlim([0, 256])
-plt.show()
+print(f"is img an instance of Image.Image? {isinstance(img, Image.Image)}")
