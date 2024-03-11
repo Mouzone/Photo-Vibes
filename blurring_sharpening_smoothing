@@ -19,3 +19,7 @@ blur_img.show()
 # img.filter(ImageFilter.BoxBlur(20)).show() # way more intense than 5
 # guassian blur is a lot more intense and blurs the center more than the outer edge of the kernel
 img.filter(ImageFilter.GaussianBlur(20)).show()
+
+sharp_img = img.filter(ImageFilter.SHARPEN)
+img.crop((300, 300, 500, 500)).show()
+sharp_img.crop((300, 300, 500, 500)).show()
