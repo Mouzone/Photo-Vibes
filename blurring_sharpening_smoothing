@@ -1,0 +1,8 @@
+from PIL import Image, ImageFilter
+
+filename = "wakin_chau.jpeg"
+with Image.open(filename) as img:
+    img.load()
+
+blur_img = img.filter(ImageFilter.BLUR)
+blur_img.show()
