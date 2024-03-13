@@ -42,3 +42,15 @@ blank = img.point(lambda _: 0)
 img_segmented = Image.composite(img, blank, img_mask)
 # for the russel westbrook image the court is now balck and see only the players now
 img_segmented.show()
+
+filename_brick = "brick_wall.jpg"
+with Image.open(filename_brick) as img_brick:
+    img_brick.load()
+
+img_brick.paste(
+    img.resize((img.width//2, img.height//2)),
+    (200, 100),
+    img_mask.resize((img_mask.width//2, img_mask.height//2))
+)
+
+img_brick.show()
