@@ -4,6 +4,7 @@ from PIL import Image
 
 def proccess_image(image_path):
     img = Image.open(image_path)
+    img = img.resize((200, 200))
     img.show()
 
 folder_path = "original albums"
